@@ -1,8 +1,8 @@
-import java.net.URI;
-import java.net.http.HttpClient;
+import java.net.*;
+/*import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import org.json.JSONObject; // Requires org.json library
+import org.json.JSONObject; // Requires org.json library*/
 
 public class CurrencyConverter {
 
