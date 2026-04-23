@@ -1,0 +1,22 @@
+name: Build Java Jar
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Build with Javac
+        run: javac CurrencyApp.java
+      - name: Create Jar
+        run: jar cfe CurrencyApp.jar CurrencyApp *.class
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-currency-app
+          path: CurrencyApp.jar
